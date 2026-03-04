@@ -16,3 +16,8 @@ public:
         return count;
     }
 };
+
+// nums = [1,2,3], k = 3
+// [1,2]=3
+// [3]=3. 
+// total ans = 1+1=2
