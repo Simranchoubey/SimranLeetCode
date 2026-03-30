@@ -27,6 +27,5 @@ public:
         delete slow;  // Free memory
 
         return head;
-
     }
 };
