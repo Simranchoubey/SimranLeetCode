@@ -1,22 +1,17 @@
 class Solution {
 public:
-    bool helper_func(int start ,int end, string &s){
-        if ( start >= end) return true;
-
-        if(s[start] != s[end]) return false;
-
-        return helper_func(start + 1, end - 1, s);
-    }
     bool isPalindrome(string s) {
-        string str="";
-        for(char c:s){
-            if(isalnum(c)){
-                str+=tolower(c);
-            }
-        }
-
-        int left=0;
-        int right=str.size()-1;
-        return helper_func(left, right , str);
+       int start=0;
+       int end=s.size()-1;
+       while(start<=end){
+           if(!isalnum(s[start])){start++; continue;}
+           if(!isalnum(s[end])){end--;continue;}
+           if(tolower(s[start])!=tolower(s[end]))return false;
+           else{
+               start++;
+               end--;
+           }
+       }
+       return true;
     }
 };
